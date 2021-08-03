@@ -13,9 +13,6 @@ export default {
 		};
 	},
 	methods: {
-		// end() {
-		// 	this.$emit('end');
-		// },
 		startTime() {
 			this.timer = setInterval(() => {
 				this.reactionTime += 10;
@@ -23,7 +20,6 @@ export default {
 		},
 		end() {
 			clearInterval(this.timer);
-			console.log(this.reactionTime);
 			this.$emit('end', this.reactionTime);
 		},
 	},
@@ -31,7 +27,6 @@ export default {
 		setTimeout(() => {
 			this.showBlock = true;
 			this.startTime();
-			console.log(this.delay);
 		}, this.delay);
 	},
 };
@@ -39,11 +34,15 @@ export default {
 
 <style>
 .block {
-	background-color: teal;
+	background-color: #3f7b81;
 	color: white;
-	padding: 10% 7%;
-	width: 400px;
+	padding: 7%;
+	width: 300px;
+	height: 150px;
 	margin: 20px auto;
 	border-radius: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 </style>
